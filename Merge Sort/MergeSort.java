@@ -25,7 +25,7 @@ class Sorter implements Callable<ArrayList<Integer>> {
         Future<ArrayList<Integer>> leftFuture = executor.submit(leftSorter);
         Future<ArrayList<Integer>> rightFuture = executor.submit(rightSorter);
 
-        ArrayList<Integer> sortedList = new ArrayList<>();
+        // ArrayList<Integer> sortedList = new ArrayList<>();
 
         try {
             left = leftFuture.get();
@@ -69,7 +69,7 @@ class Sorter implements Callable<ArrayList<Integer>> {
 
 public class MergeSort {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(34, 7, 23, 32, 5, 62));
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(38, 27, 43, 3, 9, 82, 10, 1));
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         Sorter sorter = new Sorter(list);
