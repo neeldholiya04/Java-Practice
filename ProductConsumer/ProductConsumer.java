@@ -9,8 +9,8 @@ public class ProductConsumer {
     public static void main(String[] args) {
         Store store = new Store(10);
         ExecutorService es = Executors.newCachedThreadPool();
-        Semaphore pSem = new Semaphore(10);
-        Semaphore cSem = new Semaphore(10);
+        Semaphore pSem = new Semaphore(20);
+        Semaphore cSem = new Semaphore(20);
         for(int i = 0; i < 100; i++) {
             Producer producer = new Producer(pSem, cSem, store, i);
             es.submit(producer);
